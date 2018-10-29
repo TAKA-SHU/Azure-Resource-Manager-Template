@@ -250,7 +250,7 @@
             "resources": [
                 {
                     "type": "extensions",
-                    "name": "SetLanguageJP1",
+                    "name": "SetLanguageJP",
                     "apiVersion": "2017-03-30",
                     "location": "[parameters('location')]",
                     "dependsOn": [
@@ -263,30 +263,9 @@
                         "autoUpgradeMinorVersion": true,
                         "settings": {
                             "fileUris": [
-                                "[concat(parameters('_artifactsLocation'),'/DSC/Set-WindowsLanguageJP-1.ps1')]"
+                                "[concat(parameters('_artifactsLocation'),'/DSC/Set-WindowsLanguageJP.ps1')]"
                                 ],
-                              "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -File Set-WindowsLanguageJP-1.ps1"
-                                }
-                    }
-                },
-                {
-                    "type": "extensions",
-                    "name": "SetLanguageJP2",
-                    "apiVersion": "2017-03-30",
-                    "location": "[parameters('location')]",
-                    "dependsOn": [
-                        "[resourceId('Microsoft.Compute/virtualMachines', variables('adVMName'))]"
-                    ],
-                    "properties": {
-                        "publisher": "Microsoft.Compute",
-                        "type": "CustomScriptExtension",
-                        "typeHandlerVersion": "1.7",
-                        "autoUpgradeMinorVersion": true,
-                        "settings": {
-                            "fileUris": [
-                                "[concat(parameters('_artifactsLocation'),'/DSC/Set-WindowsLanguageJP-2.ps1')]"
-                                ],
-                              "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -File Set-WindowsLanguageJP-2.ps1"
+                              "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -File Set-WindowsLanguageJP.ps1"
                                 }
                     }
                 },
